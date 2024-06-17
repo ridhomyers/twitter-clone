@@ -65,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({
           bg-opacity-70
         "
       >
-        <div className="relative w-full mx-auto h-auto">
+        <div className="relative sm:w-full mx-auto h-auto">
           {/*content*/}
           <div
             className="
