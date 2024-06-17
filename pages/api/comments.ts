@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
+import serverAuth from "@/libs/serverAuth";
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,6 +13,7 @@ export default async function handler(
 
   try {
     const currentUser = await serverAuth(req, res);
+
     const { body } = req.body;
     const { postId } = req.query;
     const postIdNumber = Number(postId);
