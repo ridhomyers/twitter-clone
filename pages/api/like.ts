@@ -14,7 +14,7 @@ export default async function handler(
   try {
     const { postId } = req.body;
 
-    const { currentUser } = await serverAuth(req, res);
+    const currentUser = await serverAuth(req, res);
 
     if (!postId || typeof postId !== "number") {
       throw new Error("Invalid ID");

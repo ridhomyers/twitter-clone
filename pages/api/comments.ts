@@ -12,7 +12,7 @@ export default async function handler(
   }
 
   try {
-    const { currentUser } = await serverAuth(req, res);
+    const currentUser = await serverAuth(req, res);
     const { body } = req.body;
     const { postId } = req.query;
     const postIdNumber = Number(postId);

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import axios from "axios";
 import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
@@ -95,9 +96,15 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
         </div>
       ) : (
         <div className="py-8">
-          <h1 className="text-white text-2xl text-center mb-4 font-bold">
-            Welcome to Twitter
+          <h1 className="text-white text-2xl text-center mb-2 font-bold">
+            Welcome to X
           </h1>
+          <p className="text-xs text-center mb-4 text-slate-500">
+            Made by&nbsp;
+            <Link href="https://ridhorifai.my.id" target="_blank">
+              Muhamad Ridho Rifai
+            </Link>
+          </p>
           <div className="flex flex-row items-center justify-center gap-4">
             <Button label="Login" onClick={loginModal.onOpen} />
             <Button label="Register" onClick={registerModal.onOpen} secondary />

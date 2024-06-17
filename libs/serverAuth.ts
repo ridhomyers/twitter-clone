@@ -21,7 +21,7 @@ const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
     throw new Error("Not signed in");
   }
 
-  return { currentUser };
+  return currentUser;
 };
 
 export default serverAuth;

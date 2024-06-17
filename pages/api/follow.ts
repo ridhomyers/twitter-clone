@@ -14,7 +14,7 @@ export default async function handler(
   try {
     const { userId } = req.body;
 
-    const { currentUser } = await serverAuth(req, res);
+    const currentUser = await serverAuth(req, res);
 
     if (!userId) {
       throw new Error("Invalid ID");
