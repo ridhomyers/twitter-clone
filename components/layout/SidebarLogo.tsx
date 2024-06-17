@@ -14,6 +14,7 @@ const SidebarLogo = () => {
         p-4 
         mt-3
         flex 
+        sm:hidden
         items-center 
         justify-center 
         hover:bg-blue-300 

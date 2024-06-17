@@ -34,30 +34,28 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="col-span-1 h-full px-4 md:px-6">
-      <div className="flex flex-col">
-        <div className="space-y-2">
-          <SidebarLogo />
-          {items.map((item) => (
-            <SidebarItem
-              key={item.href}
-              alert={item.alert}
-              auth={item.auth}
-              href={item.href}
-              icon={item.icon}
-              label={item.label}
-            />
-          ))}
-          {currentUser && (
-            <SidebarItem
-              onClick={() => signOut()}
-              icon={BiLogOut}
-              label="Logout"
-            />
-          )}
-          <SidebarTweetButton />
-        </div>
+    <div className="md:col-span-1 w-full sm:w-screen lg:px-4 sm:bg-[#202020b8] sm:fixed sm:bottom-0 px-12">
+      <div className="md:space-y-2 sm:justify-between flex flex-row md:flex-col">
+        <SidebarLogo />
+        {items.map((item) => (
+          <SidebarItem
+            key={item.href}
+            alert={item.alert}
+            auth={item.auth}
+            href={item.href}
+            icon={item.icon}
+            label={item.label}
+          />
+        ))}
+        {currentUser && (
+          <SidebarItem
+            onClick={() => signOut()}
+            icon={BiLogOut}
+            label="Logout"
+          />
+        )}
       </div>
+      <SidebarTweetButton />
     </div>
   );
 };

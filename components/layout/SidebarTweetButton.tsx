@@ -7,6 +7,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 
 const SidebarTweetButton = () => {
   const router = useRouter();
+  const isHome = router.pathname === "/";
   const loginModal = useLoginModal();
   const { data: currentUser } = useCurrentUser();
 
@@ -21,21 +22,25 @@ const SidebarTweetButton = () => {
   return (
     <div onClick={onClick}>
       <div
-        className="
+        className={`
+        ${isHome ? "flex" : "hidden"}
         mt-6
+        fixed
+        bottom-20
+        right-6
+        m-auto
         lg:hidden 
         rounded-full 
         h-14
         w-14
         p-4
-        flex
         items-center
         justify-center 
         bg-sky-500 
         hover:bg-opacity-80 
         transition 
         cursor-pointer
-      "
+      `}
       >
         <FaFeather size={24} color="white" />
       </div>
